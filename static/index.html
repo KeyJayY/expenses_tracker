@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expenses Tracker</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Expenses Tracker</h1>
+
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search..." />
+      <label for="sortOrder">Sorting:</label>
+      <select id="sortBy">
+        <option value="date">Date</option>
+        <option value="amount">Amount</option>
+        <option value="category">Category</option>
+        <option value="title">Title</option>
+      </select>
+      <select id="sortOrder">
+        <option value="desc">Descending</option>
+        <option value="asc">Ascending</option>
+      </select>
+      <button onclick="loadRecords()">Search</button>
+    </div>
+
+    <table id="recordsTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="pagination">
+      <button onclick="changePage(-1)">Prev</button>
+      <span id="pageIndicator">Page 1</span>
+      <button onclick="changePage(1)">Next</button>
+    </div>
+
+    <h2 id="formTitle">Add New Record</h2>
+    <form id="recordForm" onsubmit="submitForm(event)">
+      <input type="hidden" id="recordId" />
+      <input type="date" id="date" required />
+      <input type="number" id="amount" placeholder="Amount" step="0.01" required />
+      <input type="text" id="category" placeholder="Category" required />
+      <input type="text" id="title" placeholder="Title" required />
+      <input type="text" id="desc" placeholder="Description" />
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
