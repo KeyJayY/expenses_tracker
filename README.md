@@ -21,6 +21,6 @@ Simple web app to track expenses.
 
 ## Technologies
 
-Backend: Python, Flask
-Frontend: JavaScript, HTML, CSS
-Database: PostgreSQL
+- Backend: Python, Flask
+- Frontend: JavaScript, HTML, CSS
+- Database: PostgreSQL
